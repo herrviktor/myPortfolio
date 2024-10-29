@@ -10,7 +10,7 @@ html {
 
 #grid-container {
   display: grid;
-  grid-template-rows: 14rem 5rem 50rem 3rem;
+  grid-template-rows: repeat 4, 1fr;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "nav" "main" "footer";
 }
@@ -75,6 +75,67 @@ html {
 #main {
   grid-area: main;
   background-color: #831C44;
+  color: #F6F1E6;
+}
+
+#presentation-header {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+div#presentation-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+div#presentation-container div {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem 2rem;
+  background-color: green;
+}
+
+#presentation-text {
+  font-size: 24px;
+}
+
+#skills h3 {
+  font-size: 30px;
+}
+#skills #skills-container {
+  margin-top: 12px;
+}
+#skills #skills-container section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24px;
+}
+#skills #skills-container section div {
+  width: 250px;
+  height: 20px;
+  background: linear-gradient(to right, #831C44 0%, #831C44 50%, #999 50%, #999 100%);
+}
+
+section#project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#image-container {
+  overflow: hidden;
+}
+#image-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 #footer {
