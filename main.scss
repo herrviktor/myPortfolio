@@ -1,4 +1,4 @@
-$headerFooterRadient: linear-gradient(to right,#008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #FFFF00 97%);
+$headerFooterRadient: linear-gradient(to right,#008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
 $mainBgColor: #831C44;
 $headerFooterColor: #F6F1E6;
 @mixin flex {
@@ -100,14 +100,21 @@ div#presentation-container {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    row-gap: 4rem;
     div {
         width: 300px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        margin: 0 1rem 2rem;
-        background-color: green;
+        margin: 0 8px 2rem;
+    }
+}
+
+#image-container {
+    overflow: hidden;
+    img {
+        object-fit: cover;
+        border-radius: 50%;
     }
 }
 
@@ -129,24 +136,75 @@ div#presentation-container {
             div {
                 width: 250px;
                 height: 20px;
-                background: linear-gradient(to right, $mainBgColor 0%, $mainBgColor 50%, #999 50%, #999 100%);
+            }
+            #html {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 50%, $headerFooterColor 50%, $headerFooterColor 100%);
+            }
+            #css {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 40%, $headerFooterColor 40%, $headerFooterColor 100%);
+            }
+            #figma {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 57%, $headerFooterColor 57%, $headerFooterColor 100%);
             }
         }
     }
 }
 
-section#project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+#interests {
+    h3 {
+        font-size: 30px;
+    }
+    #interests-container {
+        margin-top: 12px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        section {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+        }
+    }
 }
 
-#image-container {
-    overflow: hidden;
-    img {
-        object-fit: cover;
-        border-radius: 50%;
+#courses {
+    padding: 2rem 0;
+    table {
+        border: 1px solid $headerFooterColor;
+        font-size: 20px;
+        border-collapse: collapse;
+        td, th {
+            border: 1px solid $headerFooterColor;
+            text-align: center;
+        }
+    }
+}
+
+section#project {
+    margin-top: 4rem;
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    div#project-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2rem 0;
+        gap: 3rem 8px;
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+            padding: 0 8px;
+            video {
+                margin-top: 0.5rem;
+                width: 300px;
+            }
+        }
     }
 }
 
@@ -163,4 +221,25 @@ section#project {
             font-size: 2rem;
         }
     }
+}
+
+@media screen and (min-width: 632px) {
+    #nav {
+        display: none;
+    }
+}
+@media screen and (min-width: 632px) and (max-width: 947px) {
+    html {
+        font-size: 10px;
+    }
+}
+@media screen and (min-width: 948px) and (max-width: 1455px) {
+    html {
+        font-size: 13px;
+    }   
+}
+@media screen and (min-width: 1456px) {
+    html {
+        font-size: 17px;
+    }   
 }

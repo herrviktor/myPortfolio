@@ -38,7 +38,7 @@ html {
   height: 5.5rem;
 }
 #header div h1 {
-  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #FFFF00 97%);
+  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
@@ -89,15 +89,23 @@ div#presentation-container {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  row-gap: 4rem;
 }
 div#presentation-container div {
   width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 1rem 2rem;
-  background-color: green;
+  margin: 0 8px 2rem;
+}
+
+#image-container {
+  overflow: hidden;
+}
+#image-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 #presentation-text {
@@ -119,23 +127,71 @@ div#presentation-container div {
 #skills #skills-container section div {
   width: 250px;
   height: 20px;
-  background: linear-gradient(to right, #831C44 0%, #831C44 50%, #999 50%, #999 100%);
+}
+#skills #skills-container section #html {
+  background: linear-gradient(to right, lightgreen 0%, lightgreen 50%, #F6F1E6 50%, #F6F1E6 100%);
+}
+#skills #skills-container section #css {
+  background: linear-gradient(to right, lightgreen 0%, lightgreen 40%, #F6F1E6 40%, #F6F1E6 100%);
+}
+#skills #skills-container section #figma {
+  background: linear-gradient(to right, lightgreen 0%, lightgreen 57%, #F6F1E6 57%, #F6F1E6 100%);
+}
+
+#interests h3 {
+  font-size: 30px;
+}
+#interests #interests-container {
+  margin-top: 12px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+#interests #interests-container section {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+#courses {
+  padding: 2rem 0;
+}
+#courses table {
+  border: 1px solid #F6F1E6;
+  font-size: 20px;
+  border-collapse: collapse;
+}
+#courses table td, #courses table th {
+  border: 1px solid #F6F1E6;
+  text-align: center;
 }
 
 section#project {
+  margin-top: 4rem;
+}
+section#project h2 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+section#project div#project-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 2rem 0;
+  gap: 3rem 8px;
+}
+section#project div#project-container section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  font-size: 16px;
+  padding: 0 8px;
 }
-
-#image-container {
-  overflow: hidden;
-}
-#image-container img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
+section#project div#project-container section video {
+  margin-top: 0.5rem;
+  width: 300px;
 }
 
 #footer {
@@ -151,9 +207,30 @@ section#project {
   background-color: #F6F1E6;
 }
 #footer p span {
-  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #FFFF00 97%);
+  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
   font-size: 2rem;
+}
+
+@media screen and (min-width: 632px) {
+  #nav {
+    display: none;
+  }
+}
+@media screen and (min-width: 632px) and (max-width: 947px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media screen and (min-width: 948px) and (max-width: 1455px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (min-width: 1456px) {
+  html {
+    font-size: 17px;
+  }
 }/*# sourceMappingURL=main.css.map */
