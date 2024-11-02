@@ -1,0 +1,279 @@
+$headerFooterRadient: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
+$mainBgColor: #831C44;
+$headerFooterColor: #F6F1E6;
+
+@mixin flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin rainbow {
+    background-image: $headerFooterRadient;
+    background-clip: text;
+    /* ger varning i css validatorn men har ett
+    brett stöd i olika webläaare och hittare inget enkelt alternativ att använda */
+    color: transparent;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 8px;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-areas: "header"
+        "nav"
+        "main"
+        "footer";
+}
+
+#header {
+    grid-area: header;
+    background-image: url(images/header.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 0;
+
+    div {
+        @include flex;
+        width: 44rem;
+        padding: 2rem;
+        margin: 0 auto;
+        background-color: $headerFooterColor;
+        clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
+
+        /* genererar ett webkit prefix som inte stöds av css validatorn
+        men som ger ett bredare stöd i äldre versioner av web browsers
+        och är därför användbart */
+        img {
+            width: 5.5rem;
+            height: 5.5rem;
+        }
+
+        h1 {
+            @include rainbow;
+            font-size: 4.5rem;
+        }
+    }
+}
+
+#nav {
+    grid-area: nav;
+    background-color: $mainBgColor;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem 0;
+
+        li {
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                padding: 6px 12px;
+                background-color: $headerFooterColor;
+                color: $mainBgColor;
+                font-size: 24px;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+#main {
+    grid-area: main;
+    background-color: $mainBgColor;
+    color: $headerFooterColor;
+}
+
+#presentation-header {
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+div#presentation-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    row-gap: 4rem;
+
+    div.card {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 8px 2rem;
+    }
+}
+
+#image-container {
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        /* genererar ett webkit prefix som inte stöds av css validatorn
+        men som ger ett bredare stöd i äldre versioner av web browsers
+        och är därför användbart */
+        border-radius: 50%;
+    }
+}
+
+#presentation-text {
+    font-size: 24px;
+}
+
+#skills {
+    h3 {
+        font-size: 30px;
+    }
+
+    #skills-container {
+        margin-top: 12px;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+
+            div {
+                width: 250px;
+                height: 20px;
+            }
+
+            #html {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 50%, $headerFooterColor 50%, $headerFooterColor 100%);
+            }
+
+            #css {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 40%, $headerFooterColor 40%, $headerFooterColor 100%);
+            }
+
+            #figma {
+                background: linear-gradient(to right, lightgreen 0%, lightgreen 57%, $headerFooterColor 57%, $headerFooterColor 100%);
+            }
+        }
+    }
+}
+
+#interests {
+    h3 {
+        font-size: 30px;
+    }
+
+    #interests-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 12px;
+
+        div {
+            display: flex;
+            font-size: 20px;
+        }
+    }
+}
+
+#courses {
+    padding: 2rem 0;
+
+    table {
+        border: 1px solid $headerFooterColor;
+        font-size: 20px;
+        border-collapse: collapse;
+
+        td,
+        th {
+            border: 1px solid $headerFooterColor;
+            text-align: center;
+        }
+    }
+}
+
+section#project {
+    margin-top: 4rem;
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    div#project-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2rem 0;
+        gap: 3rem 8px;
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 16px;
+            padding: 0 8px;
+
+            video {
+                margin-top: 0.5rem;
+                width: 300px;
+            }
+        }
+    }
+}
+
+#footer {
+    grid-area: footer;
+    @include flex;
+    background-image: url(images/header.jpg);
+    background-size: cover;
+    background-position: center;
+
+    p {
+        background-color: $headerFooterColor;
+
+        span {
+            @include rainbow;
+            font-size: 2rem;
+        }
+    }
+}
+
+@media screen and (min-width: 632px) {
+    #nav {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 632px) and (max-width: 947px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 948px) and (max-width: 1455px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width: 1456px) {
+    html {
+        font-size: 17px;
+    }
+}
