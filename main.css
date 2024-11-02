@@ -10,8 +10,6 @@ html {
 
 #grid-container {
   display: grid;
-  grid-template-rows: repeat 4, 1fr;
-  grid-template-columns: 1fr;
   grid-template-areas: "header" "nav" "main" "footer";
 }
 
