@@ -40,10 +40,12 @@ html {
     background-size: cover;
     background-position: center;
     padding: 2rem 0;
+    font-size: 8px;
 
     div {
         @include flex;
-        width: 44rem;
+        width: 44em;
+        font-size: 8px;
         padding: 2rem;
         margin: 0 auto;
         background-color: $headerFooterColor;
@@ -52,13 +54,13 @@ html {
         men som ger ett bredare stöd i äldre versioner av web browsers
         och är därför användbart */
         img {
-            width: 5.5rem;
-            height: 5.5rem;
+            width: 5.5em;
+            height: 5.5em;
         }
 
         h1 {
             @include rainbow;
-            font-size: 4.5rem;
+            font-size: 4.5em;
         }
     }
 }
@@ -98,7 +100,7 @@ html {
 }
 
 #presentation-header {
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     padding: 2rem 0;
 }
@@ -108,10 +110,10 @@ div#presentation-container {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    row-gap: 4rem;
+    row-gap: 32px;
 
     div.card {
-        width: 300px;
+        width: 37rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -133,12 +135,12 @@ div#presentation-container {
 }
 
 #presentation-text {
-    font-size: 24px;
+    font-size: 3rem;
 }
 
 #skills {
     h3 {
-        font-size: 30px;
+        font-size: 3rem;
     }
 
     #skills-container {
@@ -148,11 +150,11 @@ div#presentation-container {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 24px;
+            font-size: 2.5rem;
 
             div {
-                width: 250px;
-                height: 20px;
+                width: 31rem;
+                height: 2.5rem;
             }
 
             #html {
@@ -172,7 +174,7 @@ div#presentation-container {
 
 #interests {
     h3 {
-        font-size: 30px;
+        font-size: 3rem;
     }
 
     #interests-container {
@@ -183,7 +185,10 @@ div#presentation-container {
 
         div {
             display: flex;
-            font-size: 20px;
+            font-size: 2.5rem;
+            img {
+                height: 3.5rem;
+            }
         }
     }
 }
@@ -193,7 +198,7 @@ div#presentation-container {
 
     table {
         border: 1px solid $headerFooterColor;
-        font-size: 20px;
+        font-size: 2.5rem;
         border-collapse: collapse;
 
         td,
@@ -208,7 +213,7 @@ section#project {
     margin-top: 4rem;
 
     h2 {
-        font-size: 30px;
+        font-size: 4rem;
         text-align: center;
         margin-bottom: 2rem;
     }
@@ -225,12 +230,12 @@ section#project {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-size: 16px;
+            font-size: 2.5rem;
             padding: 0 8px;
 
             video {
                 margin-top: 0.5rem;
-                width: 300px;
+                width: 37rem;
             }
         }
     }
@@ -242,37 +247,77 @@ section#project {
     background-image: url(images/header.jpg);
     background-size: cover;
     background-position: center;
+    font-size: 8px;
 
-    p {
+    p#footer-text {
         background-color: $headerFooterColor;
 
         span {
             @include rainbow;
-            font-size: 2rem;
+            font-size: 2em;
         }
     }
 }
 
-@media screen and (min-width: 632px) {
+@media screen and (min-width: 641px) {
     #nav {
         display: none;
     }
 }
 
-@media screen and (min-width: 632px) and (max-width: 947px) {
+@media screen and (min-width: 655px) and (max-width: 1246px) {
+    #header {
+        font-size: 12px;
+        div {
+            font-size: 12px;
+        }
+    }
+    #footer {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 1247px) and (max-width: 1440px) {
     html {
         font-size: 10px;
     }
-}
-
-@media screen and (min-width: 948px) and (max-width: 1455px) {
-    html {
-        font-size: 13px;
+    #header {
+        font-size: 20px;
+        div {
+            font-size: 20px;
+        }
+    }
+    #footer {
+        font-size: 16px;
     }
 }
 
-@media screen and (min-width: 1456px) {
+@media screen and (min-width: 1441px) and (max-width: 1838px) {
     html {
-        font-size: 17px;
+        font-size: 12px;
+    }
+    #header {
+        font-size: 28px;
+        div {
+            font-size: 28px;
+        }
+    }
+    #footer {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1838px) {
+    html {
+        font-size: 14px;
+    }
+    #header {
+        font-size: 36px;
+        div {
+            font-size: 36px;
+        }
+    }
+    #footer {
+        font-size: 28px;
     }
 }
