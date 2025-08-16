@@ -31,8 +31,7 @@ html {
   padding: 2rem;
   margin: 0 auto;
   background-color: #F6F1E6;
-  -webkit-clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
-          clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
+  clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
   /* genererar ett webkit prefix som inte stöds av css validatorn
   men som ger ett bredare stöd i äldre versioner av web browsers
   och är därför användbart */
@@ -58,18 +57,18 @@ html {
   top: 0;
   z-index: 1;
 }
-#nav ul {
+#nav ul, #nav .project-links {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0;
 }
-#nav ul li {
+#nav ul li, #nav .project-links li {
   list-style: none;
 }
-#nav ul li a {
+#nav ul li a, #nav .project-links li a {
   text-decoration: none;
-  padding: 6px 12px;
+  padding: 0.8rem 1.5rem;
   background-color: #F6F1E6;
   color: #831C44;
   font-size: 24px;
@@ -94,9 +93,10 @@ div#presentation-container {
   align-items: center;
   justify-content: space-around;
   row-gap: 32px;
+  margin-bottom: 5rem;
 }
 div#presentation-container div.card {
-  width: 37rem;
+  width: 42rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,17 +120,41 @@ div#presentation-container div.card {
   font-size: 3rem;
 }
 
+#content-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  row-gap: 5rem;
+  -moz-column-gap: 2rem;
+       column-gap: 2rem;
+  padding: 1rem 3rem 1rem 2rem;
+}
+#content-container div.card {
+  width: 37rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem 2rem;
+}
+
 #skills h3 {
   font-size: 3rem;
 }
 #skills #skills-container {
-  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  row-gap: 2rem;
+  margin-top: 1.5rem;
 }
 #skills #skills-container section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 #skills #skills-container section div {
   width: 31rem;
@@ -191,18 +215,41 @@ section#project div#project-container {
   align-items: center;
   justify-content: space-around;
   margin: 2rem 0;
-  gap: 3rem 8px;
+  gap: 4rem 2rem;
+  margin-bottom: 7rem;
 }
 section#project div#project-container section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  font-size: 2.5rem;
-  padding: 0 8px;
+  justify-content: center;
+  font-size: 2.2rem;
+  padding: 1rem 1rem 1rem 0.7rem;
+  width: 42rem;
+  gap: 0.5rem;
+  border: 0.5rem solid #F6F1E6;
+  border-radius: 3rem;
 }
-section#project div#project-container section video {
-  margin-top: 0.5rem;
-  width: 37rem;
+section#project div#project-container section h3 {
+  font-size: 3rem;
+}
+section#project div#project-container section img {
+  width: 40rem;
+  height: auto;
+}
+section#project div#project-container section div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+}
+section#project div#project-container section div a {
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: #F6F1E6;
+  color: #831C44;
+  border-radius: 20px;
+}
+section#project div#project-container section div a:active {
+  background-color: rgb(232.5, 220, 192.5);
 }
 
 #footer {
