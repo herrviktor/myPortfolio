@@ -9,11 +9,6 @@ html {
   font-size: 8px;
 }
 
-#grid-container {
-  display: grid;
-  grid-template-areas: "header" "nav" "main" "footer";
-}
-
 #header {
   grid-area: header;
   background-image: url(images/header.jpg);
@@ -32,9 +27,6 @@ html {
   margin: 0 auto;
   background-color: #F6F1E6;
   clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
-  /* genererar ett webkit prefix som inte stöds av css validatorn
-  men som ger ett bredare stöd i äldre versioner av web browsers
-  och är därför användbart */
 }
 #header div img {
   width: 5.5em;
@@ -48,11 +40,12 @@ html {
   brett stöd i olika webläaare och hittare inget enkelt alternativ att använda */
   color: transparent;
   font-size: 4.5em;
+  margin: 0 1rem 0 1.5rem;
 }
 
 #nav {
   grid-area: nav;
-  background-color: #831C44;
+  background-color: #8D3738;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -70,15 +63,18 @@ html {
   text-decoration: none;
   padding: 0.8rem 1.5rem;
   background-color: #F6F1E6;
-  color: #831C44;
+  color: #8D3738;
   font-size: 24px;
   border-radius: 20px;
 }
 
 #main {
   grid-area: main;
-  background-color: #831C44;
   color: #F6F1E6;
+}
+
+#presentation {
+  background-color: #8D3738;
 }
 
 #presentation-header {
@@ -93,14 +89,13 @@ div#presentation-container {
   align-items: center;
   justify-content: space-around;
   row-gap: 32px;
-  margin-bottom: 5rem;
 }
 div#presentation-container div.card {
   width: 42rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 8px 2rem;
+  margin: 0 1rem 2rem;
 }
 
 #image-container {
@@ -120,6 +115,36 @@ div#presentation-container div.card {
   font-size: 3rem;
 }
 
+#upper-curve {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden; /* för att dölja överflödigt innehåll */
+}
+
+#upper-radial {
+  height: 15rem;
+  background-color: #8D3738;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 70%, #2DB9A2 70.9%);
+          mask-image: radial-gradient(ellipse at center, transparent 70%, #2DB9A2 70.9%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 130% 200%;
+          mask-size: 130% 200%; /* täcker hela storleken, men masken visar bara toppen */
+  -webkit-mask-position: top center;
+          mask-position: top center;
+}
+
+#upper-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+  background-color: #2DB9A2;
+  z-index: -1;
+}
+
 #content-container {
   display: flex;
   flex-wrap: wrap;
@@ -128,7 +153,8 @@ div#presentation-container div.card {
   row-gap: 5rem;
   -moz-column-gap: 2rem;
        column-gap: 2rem;
-  padding: 1rem 3rem 1rem 2rem;
+  padding: 0 3rem 1rem 2rem;
+  background-color: #2DB9A2;
 }
 #content-container div.card {
   width: 37rem;
@@ -202,7 +228,8 @@ div#presentation-container div.card {
 }
 
 section#project {
-  margin-top: 4rem;
+  padding-top: 4rem;
+  background-color: #dea3b8;
 }
 section#project h2 {
   font-size: 4rem;
@@ -214,42 +241,92 @@ section#project div#project-container {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  margin: 2rem 0;
   gap: 4rem 2rem;
-  margin-bottom: 7rem;
 }
 section#project div#project-container section {
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 2.2rem;
-  padding: 1rem 1rem 1rem 0.7rem;
+  padding: 1rem 0 1rem;
   width: 42rem;
   gap: 0.5rem;
   border: 0.5rem solid #F6F1E6;
   border-radius: 3rem;
+  background-color: #8D3738;
 }
 section#project div#project-container section h3 {
   font-size: 3rem;
+  text-align: center;
 }
 section#project div#project-container section img {
-  width: 40rem;
+  width: 100%;
   height: auto;
+}
+section#project div#project-container section p {
+  padding: 0 1rem;
 }
 section#project div#project-container section div {
   display: flex;
   justify-content: space-between;
   margin-top: 0.3rem;
+  padding: 0 0.5rem;
 }
 section#project div#project-container section div a {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   background-color: #F6F1E6;
-  color: #831C44;
+  color: #8D3738;
   border-radius: 20px;
 }
-section#project div#project-container section div a:active {
+section#project div#project-container section div a:hover {
   background-color: rgb(232.5, 220, 192.5);
+}
+section#project div#project-container section div a:active {
+  background-color: white;
+}
+
+#lower-curve {
+  position: relative;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden; /* för att dölja överflödigt innehåll */
+}
+
+#lower-radial {
+  height: 15rem;
+  background-color: #8D3738;
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 70%, #dea3b8 70.9%);
+          mask-image: radial-gradient(ellipse at center, transparent 70%, #dea3b8 70.9%);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 130% 200%;
+          mask-size: 130% 200%; /* täcker hela storleken, men masken visar bara toppen */
+  -webkit-mask-position: bottom center;
+          mask-position: bottom center;
+}
+
+#lower-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+  background-color: #dea3b8;
+  z-index: -1; /* så att den ligger bakom innehållet */
+}
+
+#lower-fill {
+  height: 10rem;
+  background-color: #8D3738;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.lower-logos {
+  height: 4rem;
+  width: auto;
 }
 
 #footer {

@@ -1,6 +1,8 @@
 $headerFooterRadient: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
-$mainBgColor: #831C44;
+$mainBgColor: #8D3738;
 $headerFooterColor: #F6F1E6;
+$contentBgColor: #2DB9A2;
+$projektBgColor: #dea3b8;
 
 @mixin flex {
     display: flex;
@@ -26,13 +28,7 @@ html {
     font-size: 8px;
 }
 
-#grid-container {
-    display: grid;
-    grid-template-areas: "header"
-        "nav"
-        "main"
-        "footer";
-}
+
 
 #header {
     grid-area: header;
@@ -50,9 +46,7 @@ html {
         margin: 0 auto;
         background-color: $headerFooterColor;
         clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
-        /* genererar ett webkit prefix som inte stöds av css validatorn
-        men som ger ett bredare stöd i äldre versioner av web browsers
-        och är därför användbart */
+        
         img {
             width: 5.5em;
             height: 5.5em;
@@ -61,6 +55,7 @@ html {
         h1 {
             @include rainbow;
             font-size: 4.5em;
+            margin: 0 1rem 0 1.5rem;
         }
     }
 }
@@ -95,8 +90,10 @@ html {
 
 #main {
     grid-area: main;
-    background-color: $mainBgColor;
     color: $headerFooterColor;
+}
+#presentation {
+    background-color: $mainBgColor;
 }
 
 #presentation-header {
@@ -111,14 +108,13 @@ div#presentation-container {
     align-items: center;
     justify-content: space-around;
     row-gap: 32px;
-    margin-bottom: 5rem;
 
     div.card {
         width: 42rem;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 8px 2rem;
+        margin: 0 1rem 2rem;
     }
 }
 
@@ -139,6 +135,35 @@ div#presentation-container {
     font-size: 3rem;
 }
 
+#upper-curve {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden; /* för att dölja överflödigt innehåll */
+}
+
+#upper-radial {
+    height: 15rem;
+    background-color: $mainBgColor;
+
+    // Mask som visar en stor cirkelformad båge i toppen
+    mask-image: radial-gradient(ellipse at center, transparent 70%, $contentBgColor 70.9%,);
+    mask-repeat: no-repeat;
+    mask-size: 130% 200%; /* täcker hela storleken, men masken visar bara toppen */
+    mask-position: top center;
+ 
+}
+
+#upper-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    background-color: $contentBgColor;
+    z-index: -1;
+}
+
 #content-container {
     display: flex;
     flex-wrap: wrap;
@@ -146,7 +171,8 @@ div#presentation-container {
     justify-content: space-around;
     row-gap: 5rem;
     column-gap: 2rem;
-    padding: 1rem 3rem 1rem 2rem;
+    padding: 0 3rem 1rem 2rem;
+    background-color: $contentBgColor;
 
     div.card {
         width: 37rem;
@@ -234,7 +260,8 @@ div#presentation-container {
 }
 
 section#project {
-    margin-top: 4rem;
+    padding-top: 4rem;
+    background-color: $projektBgColor;
 
     h2 {
         font-size: 4rem;
@@ -247,34 +274,39 @@ section#project {
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-around;
-        margin: 2rem 0;
         gap: 4rem 2rem;
-        margin-bottom: 7rem;
 
         section {
             display: flex;
             flex-direction: column;
             justify-content: center;
             font-size: 2.2rem;
-            padding: 1rem 1rem 1rem 0.7rem;
+            padding: 1rem 0 1rem;
             width: 42rem;
             gap: 0.5rem;
             border: 0.5rem solid $headerFooterColor;
             border-radius: 3rem;
+            background-color: $mainBgColor;
 
             h3 {
                 font-size: 3rem;
+                text-align: center;
             }
 
             img {
-                width: 40rem;
+                width: 100%;
                 height: auto;
+            }
+
+            p {
+                padding: 0 1rem;
             }
 
             div {
                 display: flex;
                 justify-content: space-between;
                 margin-top: 0.3rem;
+                padding: 0 0.5rem;
 
                 a {
                     text-decoration: none;
@@ -284,12 +316,59 @@ section#project {
                     border-radius: 20px;
                 }
 
-                a:active {
+                a:hover {
                     background-color: darken($headerFooterColor, 10%);
                 }
+
+                a:active {
+                    background-color: lighten($headerFooterColor, 10%);
+                }
+
             }
         }
     }
+}
+
+#lower-curve {
+    position: relative;
+    width: 100%;
+    height: 15rem;
+    overflow: hidden; /* för att dölja överflödigt innehåll */
+}
+
+#lower-radial {
+    height: 15rem;
+    background-color: $mainBgColor;
+
+    // Mask som visar en stor cirkelformad båge i toppen
+    mask-image: radial-gradient(ellipse at center, transparent 70%, $projektBgColor 70.9%,);
+    mask-repeat: no-repeat;
+    mask-size: 130% 200%; /* täcker hela storleken, men masken visar bara toppen */
+    mask-position: bottom center;
+ 
+}
+
+#lower-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15rem;
+    background-color: $projektBgColor;
+    z-index: -1; /* så att den ligger bakom innehållet */
+}
+
+#lower-fill {
+    height: 10rem;
+    background-color: $mainBgColor;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lower-logos {
+    height: 4rem;
+    width: auto;
 }
 
 #footer {
