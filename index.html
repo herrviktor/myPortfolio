@@ -13,9 +13,10 @@
 <body>
     <div id="grid-container">
         <header id="header">
-            <div id="header-background">
-                <img src="images/logo.png" alt="Sidan logotyp">
-                <h1>Min Portfolio</h1>
+            <div>
+                <div id="header-background">
+                    <h1>Min Portfolio</h1>
+                </div>
             </div>
         </header>
 
@@ -36,11 +37,13 @@
                     </div>
                     <div id="presentation-text" class="card">
                         <p>
-                            Hej, mitt namn är Viktor Ekström, en fullstackutvecklare 
-                            under utbildning boende i Stockholm. Mitt mål är att skapa 
+                            Mitt namn är Viktor Ekström, en fullstack utvecklare 
+                            under utbildning boende i Stockholm. Mitt mål är att få skapa 
                             moderna, användarvänliga och funktionella användargränssnitt 
-                            för webben tillsammans med ett sammansvetsat team där vi 
-                            hjälper varandra och utvecklas tillsammans.
+                            för webben tillsammans med ett team där vi 
+                            hjälper varandra och utvecklas tillsammans. Jag Söker just nu
+                            en LiA-Praktik plats i 6 månader (24 vckor) från 3e November 2025 
+                            och framåt.
                         </p>
                     </div>
                 </div>  
@@ -171,7 +174,8 @@
                         <h3>Tennisgrejer</h3>
                         <img src="images/tennisgrejer.png" alt="En bild på en fiktiv webbshop för tennisgrejer">
                         <p>
-                            En fiktiv webbshop för tennisgrejer skapat med HTML/CSS/VanillaJS
+                            Min första hemsida som är en enkel fiktiv webbshop för 
+                            tennisgrejer skapat med HTML/CSS/VanillaJS
                         </p>
                         <div>
                             <a href="https://herrviktor.github.io/Projektarbete-html-css-javascript/" class="site-button" target="_blank">Gå till sidan &gt</a>
@@ -182,7 +186,9 @@
                         <h3>Cheap&Chabby</h3>
                         <img src="images/cheap&shabby.png" alt="En bild på en fiktiv webbshop för Skjortor" width="320" height="auto">
                         <p>
-                            En fiktiv webbshop mot dummyjson APIet skapat med ReactJS.
+                            En fiktiv webbshop mot dummyjson APIet skapat med ReactJS
+                            där jag anvädenr hooks för att skapa en fungerande varukorg
+                            och färgtema.
                         </p>
                         <div>
                             <a href="https://herrviktor.github.io/projekt-react-webshop/" class="site-button" target="_blank">Gå till sidan &gt</a>
@@ -194,6 +200,7 @@
                         <img src="images/topwarmovies.png" alt="En bild på en hemsida för krigsfilmer" width="320" height="auto">
                         <p>
                             En imdb inspirerad filmsida skapat med Node express, AngularJS och MongoDB.
+                            Ps. Backend ligger på render och tar upp till 45sek att ladda.
                         </p>
                         <div>
                             <a href="https://top-war-movie.netlify.app" class="site-button" target="_blank">Gå till sidan &gt</a>
@@ -205,6 +212,7 @@
                         <img src="images/food&flavours.png" alt="En bild på en hemsida för matrecept" width="320" height="auto">
                         <p>
                             En receptsida skapad tillsammans med en klasskamrat i Node Express och ReactJS.
+                            Ps. Backend ligger på render och tar upp till 45sek att ladda.
                         </p>
                         <div>
                             <a href="https://u09-team-vw.netlify.app" class="site-button" target="_blank">Gå till sidan &gt</a>
@@ -213,6 +221,9 @@
                     </section>
                 </div>
             </section>
+        </main>
+
+        <footer id="footer">
             <div id="lower-curve">
                 <div id="lower-bg"></div>
                 <div id="lower-radial"></div>
@@ -225,10 +236,26 @@
                     <img src="images/linkedin.png" class="lower-logos" alt="En bildlänk till mitt Linked-in konto">
                 </a>
             </div>
-        </main>
-
-        <footer id="footer">
-            <p id="footer-text"><span>Copyright &copy; 2025 Viktor Ekstrom</span></p>
+            <div id="contact-container">
+                <h3>Kontaktuppgifter</h3>
+                <div id="contact-flex-container">
+                    <p>
+                        <iconify-icon icon="mdi:email" class="contact-icon"></iconify-icon>
+                        <span class="contact-text">Mail: herrviktor@hotmail.com</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="mdi:phone" class="contact-icon"></iconify-icon>
+                        <span class="contact-text">Mobil: 073-6395462</span>
+                    </p>
+                    <p>
+                        <iconify-icon icon="mdi:discord" class="contact-icon"></iconify-icon>
+                        <span class="contact-text">Discord: viktor_32097</span>
+                    </p>
+                </div>         
+            </div>
+            <p id="footer-text">
+                <span>Copyright &copy; 2025 Viktor Ekstrom</span>
+            </p>
         </footer>
 
         </div>

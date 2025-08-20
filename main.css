@@ -21,24 +21,15 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44em;
+  width: 40em;
   font-size: 8px;
-  padding: 2rem;
+  padding: 1rem 2rem;
   margin: 0 auto;
   background-color: #F6F1E6;
   clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
 }
-#header div img {
-  width: 5.5em;
-  height: 5.5em;
-}
 #header div h1 {
-  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  /* ger varning i css validatorn men har ett
-  brett stöd i olika webläaare och hittare inget enkelt alternativ att använda */
-  color: transparent;
+  color: #8D3738;
   font-size: 4.5em;
   margin: 0 1rem 0 1.5rem;
 }
@@ -329,27 +320,40 @@ section#project div#project-container section div a:active {
   width: auto;
 }
 
-#footer {
-  grid-area: footer;
+#footer p#footer-text {
+  display: flex;
+  justify-content: center;
+  background-color: #8D3738;
+}
+#footer p#footer-text span {
+  color: #F6F1E6;
+}
+#footer #contact-container {
+  background-color: #8D3738;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 7rem 3rem;
+  color: #F6F1E6;
+  font-size: 2rem;
+}
+#footer #contact-container div {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(images/header.jpg);
-  background-size: cover;
-  background-position: center;
-  font-size: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
 }
-#footer p#footer-text {
-  background-color: #F6F1E6;
+#footer #contact-container div p {
+  display: flex;
 }
-#footer p#footer-text span {
-  background-image: linear-gradient(to right, #008000 0%, #ADD8E6 17%, #0000FF 35%, #800080 52%, #FF0000 68%, #FFA500 82%, #c4c417 97%);
-  -webkit-background-clip: text;
-          background-clip: text;
-  /* ger varning i css validatorn men har ett
-  brett stöd i olika webläaare och hittare inget enkelt alternativ att använda */
-  color: transparent;
-  font-size: 2em;
+#footer #contact-container div p .contact-icon {
+  position: relative;
+  top: 0.05rem;
 }
 
 @media screen and (min-width: 641px) {
