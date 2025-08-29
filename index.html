@@ -13,30 +13,42 @@
 <body>
     <div id="grid-container">
         <header id="header">
+            <button id="langToggle" aria-label="Byt språk">
+                Switch to English
+            </button>
             <div>
                 <div id="header-background">
-                    <h1>Min Portfolio</h1>
+                    <h1 class="svenska">Min Portfolio</h1>
+                    <h1 class="english">My Portfolio</h1>
                 </div>
-            </div>
+            </div> 
         </header>
 
-        <nav id="nav">
+        <nav class="nav svenska">
             <ul>
                 <li><a href="#header">Hem</a></li>
                 <li><a href="#skills">Färdigheter</a></li>
                 <li><a href="#project">Projekt</a></li>
             </ul>
         </nav>
+        <nav class="nav english">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+            </ul>
+        </nav>
 
         <main id="main">
             <section id="presentation">
-                <h2 id="presentation-header">Välkommen 🫠</h2>
+                <h2 class="presentation-header svenska">Välkommen 🫠</h2>
+                <h2 class="presentation-header english">Welcome 🫠</h2>
                 <div id="presentation-container">
                     <div id="image-container" class="card">
                         <img src="images/viktor.png" alt="En bild på Viktor">
                     </div>
                     <div id="presentation-text" class="card">
-                        <p>
+                        <p class="svenska">
                             Mitt namn är Viktor Ekström, en fullstack utvecklare 
                             under utbildning boende i Stockholm. Mitt mål är att få skapa 
                             moderna, användarvänliga och funktionella användargränssnitt 
@@ -44,6 +56,14 @@
                             hjälper varandra och utvecklas tillsammans. Jag Söker just nu
                             en LiA-Praktik plats i 6 månader (24 vckor) från 3e November 2025 
                             och framåt.
+                        </p>
+                        <p class="english">
+                            My name is Viktor Ekström, and I am a full-stack developer in 
+                            training based in Stockholm. My goal is to create modern, 
+                            user-friendly, and functional web interfaces together with a 
+                            team where we support each other and grow together. I am currently 
+                            looking for a six-month internship (24 weeks), starting on 
+                            November 3rd, 2025 and onward.
                         </p>
                     </div>
                 </div>  
@@ -55,7 +75,8 @@
             <section id="content">
                 <div id="content-container" class="card">
                     <div id="skills" class="card">
-                        <h3>Färdigheter</h3>
+                        <h3 class="svenska">Färdigheter</h3>
+                        <h3 class="english">Skills</h3>
                         <div id="skills-container">
                             <section>
                                 <img src="images/html.png" alt="En bild på HTML logotypen" width="50" height="auto">
@@ -67,11 +88,19 @@
                             </section>
                             <section>
                                 <img src="images/Javascript.png" alt="En bild på Javascript logotypen" width="40" height="auto">
-                                <p>Javascript</p>
+                                <p>JavaScript</p>
+                            </section>
+                            <section>
+                                <img src="images/php.png" alt="En bild på Javascript logotypen" width="50" height="auto">
+                                <p>PHP</p>
                             </section>
                             <section>
                                 <img src="images/Node.png" alt="En bild på Node.js logotypen" width="50" height="auto">
                                 <p>Node.js</p>
+                            </section>
+                            <section>
+                                <img src="images/typescript.png" alt="En bild på Javascript logotypen" width="40" height="auto">
+                                <p>TypesScript</p>
                             </section>
                             <section>
                                 <img src="images/React.png" alt="En bild på React logotypen" width="50" height="auto">
@@ -82,21 +111,26 @@
                                 <p>Figma</p>
                             </section>
                             <section>
-                                <img src="images/Angular.png" alt="En bild på Angular logotypen" width="50" height="auto">
-                                <p>Angular</p>
-                            </section>
-                            <section>
                                 <img src="images/Sass.png" alt="En bild på SASS logotypen" width="50" height="auto">
                                 <p>SCSS</p>
                             </section>
                             <section>
+                                <img src="images/laravel.png" alt="En bild på Javascript logotypen" width="40" height="auto">
+                                <p>Laravel</p>
+                            </section>
+                            <section>
+                                <img src="images/Angular.png" alt="En bild på Angular logotypen" width="50" height="auto">
+                                <p>Angular</p>
+                            </section>
+                            <section>
                                 <img src="images/Tailwind.png" alt="En bild på Tailwind logotypen" width="50" height="auto">
-                                <p>Tailwind CSS</p>
+                                <p>Tailwind</p>
                             </section>
                         </div>
                     </div>
                     <div id="interests" class="card">
-                        <h3>Fritidsintressen</h3>
+                        <h3 class="svenska">Fritidsintressen</h3>
+                        <h3 class="english">Hobbies</h3>
                         <div id="interests-container">
                             <div class="interest">
                                 <img src="images/tennis.png" alt="En bild på en tennisboll">
@@ -104,7 +138,8 @@
                             </div>
                             <div class="interest">
                                 <img src="images/pingis.png" alt="En bild på pingisrack">
-                                <p>Pingis</p>
+                                <p class="svenska">Pingis</p>
+                                <p class="english">Ping-Pong</p>
                             </div>
                             <div class="interest">
                                 <img src="images/car.png" alt="En bild på en animerad bil">
@@ -113,7 +148,7 @@
                         </div>
                     </div>
                     <div id="courses" class="card">
-                        <table>
+                        <table class="svenska">
                             <caption>Avklarde kurser inom IT</caption>
                             <thead>
                             <tr>
@@ -164,13 +199,65 @@
                             </tr>
                             </tbody>
                         </table>
+                        <table class="english">
+                            <caption>Completed IT Courses</caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Course</th>
+                                    <th scope="col">Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Programming 1</td>
+                                    <td>Komvux</td>
+                                </tr>
+                                <tr>
+                                    <td>Programming 2</td>
+                                    <td>Komvux</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Development 1</td>
+                                    <td>Komvux</td>
+                                </tr>
+                                <tr>
+                                    <td>Web Development 2</td>
+                                    <td>Komvux</td>
+                                </tr>
+                                <tr>
+                                    <td>Programming Methodology</td>
+                                    <td>YH 25 yhp</td>
+                                </tr>
+                                <tr>
+                                    <td>HTML and CSS</td>
+                                    <td>YH 25 yhp</td>
+                                </tr>
+                                <tr>
+                                    <td>Project Methodology</td>
+                                    <td>YH 10 yhp</td>
+                                </tr>
+                                <tr>
+                                    <td>UX and Design</td>
+                                    <td>YH 15 yhp</td>
+                                </tr>
+                                <tr>
+                                    <td>Backend Development</td>
+                                    <td>YH 60 yhp</td>
+                                </tr>
+                                <tr>
+                                    <td>JavaScript</td>
+                                    <td>YH 75 yhp</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </section>
             <section id="project">
-                <h2>Projekt</h2>
+                <h2 class="svenska">Projekt</h2>
+                <h2 class="english">Projects</h2>
                 <div id="project-container">
-                    <section>
+                    <section class="svenska">
                         <h3>Tennisgrejer</h3>
                         <img src="images/tennisgrejer.png" alt="En bild på en fiktiv webbshop för tennisgrejer">
                         <p>
@@ -182,7 +269,7 @@
                             <a href="https://github.com/herrviktor/Projektarbete-html-css-javascript" class="github-button" target="_blank">Kodbasen på Github &gt</a>
                         </div>
                     </section>
-                    <section>
+                    <section class="svenska">
                         <h3>Cheap&Chabby</h3>
                         <img src="images/cheap&shabby.png" alt="En bild på en fiktiv webbshop för Skjortor" width="320" height="auto">
                         <p>
@@ -195,7 +282,7 @@
                             <a href="https://github.com/herrviktor/projekt-react-webshop" class="github-button" target="_blank">Kodbasen på Github &gt</a>
                         </div>
                     </section>
-                    <section>
+                    <section class="svenska">
                         <h3>TopWarMovies</h3>
                         <img src="images/topwarmovies.png" alt="En bild på en hemsida för krigsfilmer" width="320" height="auto">
                         <p>
@@ -207,7 +294,7 @@
                             <a href="https://github.com/herrviktor/TopWarMovies-Frontend" class="github-button" target="_blank">Kodbasen på Github &gt</a>
                         </div>
                     </section>
-                    <section>
+                    <section class="svenska">
                         <h3>Food & Flavours</h3>
                         <img src="images/food&flavours.png" alt="En bild på en hemsida för matrecept" width="320" height="auto">
                         <p>
@@ -217,6 +304,54 @@
                         <div>
                             <a href="https://u09-team-vw.netlify.app" class="site-button" target="_blank">Gå till sidan &gt</a>
                             <a href="https://github.com/herrviktor/Food-Flavours" class="github-button" target="_blank">Kodbasen på Github &gt</a>
+                        </div>
+                    </section>
+                    <section class="english">
+                        <h3>Tennisgrejer</h3>
+                        <img src="images/tennisgrejer.png" alt="An image of a fictive webshop for tennis gear">
+                        <p>
+                            My first website, a simple fictional web shop for tennis 
+                            gear, built with HTML, CSS, and Vanilla JavaScript.
+                        </p>
+                        <div>
+                            <a href="https://herrviktor.github.io/Projektarbete-html-css-javascript/" class="site-button" target="_blank">Visit website &gt</a>
+                            <a href="https://github.com/herrviktor/Projektarbete-html-css-javascript" class="github-button" target="_blank">Codebase on Github &gt</a>
+                        </div>
+                    </section>
+                    <section class="english">
+                        <h3>Cheap&Chabby</h3>
+                        <img src="images/cheap&shabby.png" alt="An image of a fictive webshop for shirts" width="320" height="auto">
+                        <p>
+                            A fictional web shop connected to the DummyJSON API, built with ReactJS. 
+                            I used hooks to implement a functional shopping cart and color theme.
+                        </p>
+                        <div>
+                            <a href="https://herrviktor.github.io/projekt-react-webshop/" class="site-button" target="_blank">Visit website &gt</a>
+                            <a href="https://github.com/herrviktor/projekt-react-webshop" class="github-button" target="_blank">Codebase on Github &gt</a>
+                        </div>
+                    </section>
+                    <section class="english">
+                        <h3>TopWarMovies</h3>
+                        <img src="images/topwarmovies.png" alt="An image of a website about warmovies" width="320" height="auto">
+                        <p>
+                            An IMDb-inspired movie website built with Node Express, AngularJS, and MongoDB.
+                            P.S. The backend is hosted on Render and may take up to 45 seconds to load.
+                        </p>
+                        <div>
+                            <a href="https://top-war-movie.netlify.app" class="site-button" target="_blank">Visit website &gt</a>
+                            <a href="https://github.com/herrviktor/TopWarMovies-Frontend" class="github-button" target="_blank">Codebase on Github &gt</a>
+                        </div>
+                    </section>
+                    <section class="english">
+                        <h3>Food & Flavours</h3>
+                        <img src="images/food&flavours.png" alt="An image of a website for recipes" width="320" height="auto">
+                        <p>
+                            A recipe website developed together with a classmate using Node Express and ReactJS.
+                            P.S. The backend is hosted on Render and may take up to 45 seconds to load.
+                        </p>
+                        <div>
+                            <a href="https://u09-team-vw.netlify.app" class="site-button" target="_blank">Visit website &gt</a>
+                            <a href="https://github.com/herrviktor/Food-Flavours" class="github-button" target="_blank">Codebase on Github &gt</a>
                         </div>
                     </section>
                 </div>
@@ -237,15 +372,20 @@
                 </a>
             </div>
             <div id="contact-container">
-                <h3>Kontaktuppgifter</h3>
+                <h3 class="svenska">Kontaktuppgifter</h3>
+                <h3 class="english">Contact Information</h3>
                 <div id="contact-flex-container">
                     <p>
                         <iconify-icon icon="mdi:email" class="contact-icon"></iconify-icon>
                         <span class="contact-text">Mail: herrviktor@hotmail.com</span>
                     </p>
-                    <p>
+                    <p class="svenska">
                         <iconify-icon icon="mdi:phone" class="contact-icon"></iconify-icon>
                         <span class="contact-text">Mobil: 073-6395462</span>
+                    </p>
+                     <p class="english">
+                        <iconify-icon icon="mdi:phone" class="contact-icon"></iconify-icon>
+                        <span class="contact-text">Phone: 073-6395462</span>
                     </p>
                     <p>
                         <iconify-icon icon="mdi:discord" class="contact-icon"></iconify-icon>
@@ -254,10 +394,11 @@
                 </div>         
             </div>
             <p id="footer-text">
-                <span>Copyright &copy; 2025 Viktor Ekstrom</span>
+                <span>Copyright &copy; 2025 Viktor Ekström</span>
             </p>
         </footer>
 
         </div>
+    <script src="main.js"></script>
 </body>
 </html>

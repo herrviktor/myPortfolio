@@ -9,6 +9,10 @@ html {
   font-size: 8px;
 }
 
+.english {
+  display: none;
+}
+
 #header {
   grid-area: header;
   background-image: url(images/header.jpg);
@@ -27,30 +31,41 @@ html {
   margin: 0 auto;
   background-color: #F6F1E6;
   clip-path: polygon(5% 50%, 1% 3%, 10% 10%, 20% 3%, 30% 10%, 40% 3%, 50% 10%, 60% 3%, 70% 10%, 80% 3%, 90% 10%, 99% 3%, 95% 50%, 99% 97%, 90% 90%, 80% 97%, 70% 90%, 60% 97%, 50% 90%, 40% 97%, 30% 90%, 20% 97%, 10% 90%, 1% 97%, 0% 100%);
+  opacity: 0.9;
 }
 #header div h1 {
   color: #8D3738;
   font-size: 4.5em;
   margin: 0 1rem 0 1.5rem;
 }
+#header button {
+  padding: 0.5rem 1rem;
+  font-size: 1.6rem;
+  background-color: #F6F1E6;
+  color: #8D3738;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 0 0 2rem 1.5rem;
+}
 
-#nav {
+.nav {
   grid-area: nav;
   background-color: #8D3738;
   position: sticky;
   top: 0;
   z-index: 1;
 }
-#nav ul, #nav .project-links {
+.nav ul, .nav .project-links {
   display: flex;
   align-items: center;
   justify-content: space-around;
   padding: 1rem 0;
 }
-#nav ul li, #nav .project-links li {
+.nav ul li, .nav .project-links li {
   list-style: none;
 }
-#nav ul li a, #nav .project-links li a {
+.nav ul li a, .nav .project-links li a {
   text-decoration: none;
   padding: 0.8rem 1.5rem;
   background-color: #F6F1E6;
@@ -68,7 +83,7 @@ html {
   background-color: #8D3738;
 }
 
-#presentation-header {
+.presentation-header {
   font-size: 4rem;
   text-align: center;
   padding: 2rem 0;
@@ -206,6 +221,7 @@ div#presentation-container div.card {
 
 #courses {
   padding: 2rem 0;
+  width: 40rem !important;
 }
 #courses table {
   border: 1px solid #F6F1E6;
@@ -324,6 +340,7 @@ section#project div#project-container section div a:active {
   display: flex;
   justify-content: center;
   background-color: #8D3738;
+  padding: 1rem 0;
 }
 #footer p#footer-text span {
   color: #F6F1E6;
@@ -356,9 +373,9 @@ section#project div#project-container section div a:active {
   top: 0.05rem;
 }
 
-@media screen and (min-width: 641px) {
-  #nav {
-    display: none;
+@media screen and (min-width: 768px) {
+  .nav {
+    display: none !important;
   }
 }
 @media screen and (min-width: 655px) and (max-width: 1246px) {
